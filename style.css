@@ -1,0 +1,264 @@
+:root {
+  --bg: #0e1014;
+  --bg-card: #161a21;
+  --line: #232a34;
+  --fg: #d6dde8;
+  --fg-dim: #8b97a8;
+  --accent: #4fa3ff;
+  --accent-soft: #1d3350;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #f6f7f9;
+    --bg-card: #ffffff;
+    --line: #e3e6ec;
+    --fg: #1c1f26;
+    --fg-dim: #667085;
+    --accent: #1a6fd4;
+    --accent-soft: #e7f0fc;
+  }
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas,
+               "Liberation Mono", monospace;
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+main {
+  max-width: 46rem;
+  margin: 0 auto;
+  padding: 3rem 1.15rem 4rem;
+}
+
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 1.4rem 1.5rem;
+  margin-bottom: 1.1rem;
+}
+
+.hero { padding-top: 1.1rem; }
+
+.logo {
+  margin: 0 0 1rem;
+  font-size: 0.8rem;
+  line-height: 1.25;
+  color: var(--accent);
+  overflow-x: auto;
+}
+
+h1 {
+  margin: 0 0 0.4rem;
+  font-size: 1.7rem;
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  margin: 0 0 0.9rem;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.tagline { margin: 0 0 1.2rem; color: var(--fg-dim); }
+.tagline strong { color: var(--fg); font-weight: 600; }
+
+p { margin: 0 0 0.85rem; }
+p:last-child { margin-bottom: 0; }
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.15s;
+}
+a:hover { border-bottom-color: var(--accent); }
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.links a {
+  padding: 0.3rem 0.7rem;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  font-size: 0.86rem;
+  color: var(--fg);
+}
+.links a:hover {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.facts, .linklist {
+  list-style: none;
+  margin: 1.1rem 0 0;
+  padding: 0;
+}
+
+.facts li, .linklist li {
+  display: flex;
+  gap: 1rem;
+  padding: 0.45rem 0;
+  border-top: 1px solid var(--line);
+  flex-wrap: wrap;
+}
+
+.k {
+  min-width: 7.5rem;
+  color: var(--fg-dim);
+  font-size: 0.86rem;
+}
+.v { flex: 1 1 12rem; }
+
+.chips {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  padding: 0;
+  margin: 0 0 1rem;
+}
+
+.chips li {
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--fg);
+  font-size: 0.83rem;
+}
+
+.muted { color: var(--fg-dim); }
+.small { font-size: 0.82rem; }
+
+footer {
+  text-align: center;
+  padding: 1.5rem 0 0;
+  color: var(--fg-dim);
+  font-size: 0.86rem;
+}
+footer p { margin: 0.3rem 0; }
+
+::selection { background: var(--accent); color: #fff; }
+
+@media (max-width: 480px) {
+  main { padding: 1.6rem 0.85rem 2.5rem; }
+  .card { padding: 1.15rem 1.1rem; }
+  h1 { font-size: 1.42rem; }
+  .k { min-width: 100%; }
+}
+/* ── secret room ────────────────────────────────────────── */
+
+.door {
+  border: 1px dashed var(--line);
+  border-radius: 10px;
+  padding: 1.3rem 1.5rem;
+  margin: 2rem 0 0.5rem;
+  text-align: center;
+  opacity: 0.55;
+  transition: opacity 0.25s, border-color 0.25s;
+}
+.door:hover {
+  opacity: 1;
+  border-color: var(--accent);
+}
+.door h2 { margin-bottom: 0.6rem; }
+.door p { color: var(--fg-dim); font-size: 0.88rem; }
+
+.door-link {
+  font-size: 0.86rem;
+  color: var(--fg-dim);
+  border-bottom: 1px dotted var(--line);
+}
+.door-link:hover {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+  letter-spacing: 0.02em;
+}
+.door-glyph { opacity: 0.8; }
+
+.secret-page .card {
+  animation: rise 0.45s ease both;
+}
+.secret-page .card:nth-child(2) { animation-delay: 0.06s; }
+.secret-page .card:nth-child(3) { animation-delay: 0.12s; }
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: none; }
+}
+
+.crumb {
+  margin: 0 0 0.8rem;
+  font-size: 0.84rem;
+}
+.crumb a { color: var(--fg-dim); }
+.crumb a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+
+.secret-list .v { color: var(--fg); }
+.secret-list li { border-top-color: var(--line); }
+
+@media (prefers-reduced-motion: reduce) {
+  .secret-page .card { animation: none; }
+}
+
+/* ── family page (中文家人版) ────────────────────────────── */
+
+.family-page {
+  font-family: "PingFang SC", "Noto Sans SC", "Source Han Sans SC",
+               "Microsoft YaHei", "Hiragino Sans GB", system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.85;
+  letter-spacing: 0.01em;
+}
+
+.family-page .card {
+  border-radius: 12px;
+  padding: 1.7rem 1.8rem;
+}
+
+.family-page h1 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.family-page h2 {
+  text-transform: none;
+  letter-spacing: 0.08em;
+  font-size: 0.9rem;
+}
+
+.family-page p { color: var(--fg); }
+
+.family-page .tagline {
+  font-size: 0.95rem;
+}
+
+.family-page .chips li { font-size: 0.85rem; }
+
+.family-page .k {
+  font-size: 0.9rem;
+  min-width: 6.5rem;
+}
+
+@media (max-width: 480px) {
+  .family-page { font-size: 15px; line-height: 1.8; }
+  .family-page .card { padding: 1.2rem 1.15rem; }
+  .family-page h1 { font-size: 1.5rem; }
+}
