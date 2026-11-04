@@ -1,0 +1,173 @@
+/* ── blog ───────────────────────────────────────────────── */
+
+.post-list {
+  display: grid;
+  gap: 0.15rem;
+}
+
+.post-item {
+  display: block;
+  padding: 1rem 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 0;
+  color: inherit;
+}
+.post-item:first-child { border-top: 0; padding-top: 0.2rem; }
+
+.post-item h3 {
+  margin: 0 0 0.3rem;
+  font-size: 1.02rem;
+  font-weight: 600;
+  color: var(--fg);
+  letter-spacing: 0.01em;
+}
+.post-item:hover h3 { color: var(--accent); }
+
+.post-meta {
+  font-size: 0.78rem;
+  color: var(--fg-dim);
+  margin: 0 0 0.45rem;
+  letter-spacing: 0.03em;
+}
+
+.post-summary {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--fg-dim);
+  line-height: 1.75;
+}
+
+.tagrow {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  margin-top: 0.55rem;
+}
+.tag {
+  font-size: 0.72rem;
+  padding: 0.1rem 0.5rem;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+/* single post */
+.post-body { font-size: 0.98rem; }
+.post-body h2 {
+  text-transform: none;
+  letter-spacing: 0.04em;
+  font-size: 1.05rem;
+  margin: 1.6rem 0 0.6rem;
+}
+.post-body h3 {
+  font-size: 0.96rem;
+  margin: 1.3rem 0 0.5rem;
+  color: var(--fg);
+}
+.post-body p { margin: 0 0 1rem; }
+.post-body ul, .post-body ol { margin: 0 0 1rem; padding-left: 1.3rem; }
+.post-body li { margin-bottom: 0.35rem; }
+.post-body code {
+  font-size: 0.86em;
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+  background: var(--accent-soft);
+  color: var(--fg);
+}
+.post-body pre {
+  overflow-x: auto;
+  padding: 0.85rem 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  background: var(--bg);
+  margin: 0 0 1rem;
+}
+.post-body pre code {
+  background: none;
+  padding: 0;
+  font-size: 0.84rem;
+  line-height: 1.6;
+}
+.post-body blockquote {
+  margin: 0 0 1rem;
+  padding-left: 0.9rem;
+  border-left: 2px solid var(--accent);
+  color: var(--fg-dim);
+}
+.post-body img { max-width: 100%; height: auto; border-radius: 8px; }
+.post-body hr { border: 0; border-top: 1px solid var(--line); margin: 1.6rem 0; }
+
+.giscus-wrap { margin-top: 1.2rem; }
+.giscus-wrap[data-giscus] { display: none; }
+/* ── support page（赞赏二级页） ─────────────────────────── */
+
+.support-card {
+  text-align: center;
+}
+
+img.qr {
+  display: block;
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  margin: 0.2rem auto 1.3rem;
+  border-radius: 10px;
+  background: #fff;
+  padding: 0.4rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+}
+
+.support-note {
+  color: var(--fg-dim);
+  font-size: 0.88rem;
+  margin-bottom: 1.3rem;
+}
+
+ul.support-points {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.6rem;
+  text-align: left;
+  max-width: 30rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+ul.support-points li {
+  padding: 0.5rem 0 0.5rem 1.4rem;
+  position: relative;
+  font-size: 0.88rem;
+  color: var(--fg-dim);
+  border-top: 1px solid var(--line);
+}
+ul.support-points li:first-child { border-top: 0; }
+ul.support-points li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+}
+ul.support-points strong { color: var(--fg); font-weight: 600; }
+
+.support-back {
+  display: flex;
+  gap: 0.6rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.support-back .gbtn {
+  font: inherit;
+  font-size: 0.86rem;
+  padding: 0.45rem 1.1rem;
+  border-radius: 6px;
+  border: 1px solid var(--line);
+  color: var(--fg);
+  background: transparent;
+  transition: border-color 0.15s, background 0.15s;
+}
+.support-back .gbtn:hover {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  border-bottom-color: var(--accent);
+}

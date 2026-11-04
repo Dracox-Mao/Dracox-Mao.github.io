@@ -1,0 +1,13 @@
+{
+  "posts": [
+    {
+      "slug": "hello",
+      "title": "关于在院校里写代码，我能想到的几件事",
+      "date": "2026-11-03",
+      "readingTime": 3,
+      "summary": "机电一体化专业、Linux 爱好者、一个普通的学员。这篇解释我为什么开这个页面。",
+      "tags": ["随笔", "关于"],
+      "file": "posts/hello.md"
+    }
+  ]
+}
